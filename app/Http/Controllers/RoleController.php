@@ -12,9 +12,13 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
     {
-        //
+        $this->middleware('admin');
+    }
+    public function index(Role $model)
+    {
+         return view('roles.index', ['users' => $model->paginate(15)]);
     }
 
     /**
@@ -24,7 +28,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create');
     }
 
     /**
@@ -33,9 +37,11 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Role $model)
     {
-        //
+        $model->create($request->all());
+
+        return redirect()->route('role.index')->withStatus(__('User successfully created.'));
     }
 
     /**
@@ -57,7 +63,8 @@ class RoleController extends Controller
      */
     public function edit(role $role)
     {
-        //
+        
+        return view('roles.edit', compact('role'));
     }
 
     /**
@@ -69,7 +76,9 @@ class RoleController extends Controller
      */
     public function update(Request $request, role $role)
     {
-        //
+        $role->update($request->all());
+
+        return redirect()->route('role.index')->withStatus(__('User successfully updated.'));
     }
 
     /**
@@ -80,6 +89,8 @@ class RoleController extends Controller
      */
     public function destroy(role $role)
     {
-        //
+        $role->delete();
+
+        return redirect()->route('role.index')->withStatus(__('User successfully deleted.'));
     }
 }

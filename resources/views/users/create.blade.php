@@ -19,7 +19,7 @@
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('user.store') }}" autocomplete="off">
-                            @csrf
+                            {{ csrf_field() }}
                             
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
@@ -43,6 +43,20 @@
                                         </span>
                                     @endif
                                 </div>
+                                <div class="form-group{{ $errors->has('role') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-email">{{ __('rol') }}</label>
+                                    <select name="role_id" class="form-control form-control-alternative{{ $errors->has('role') ? ' is-invalid' : '' }}">
+                                        @foreach($roles as $role)
+                                        <option value="{{$role->id}}" >{{$role->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('role'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('role') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="" required>

@@ -21,7 +21,7 @@
     <body class="{{ $class ?? '' }}">
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
+                {{ csrf_field() }}
             </form>
             @include('layouts.navbars.sidebar')
         @endauth
@@ -41,6 +41,12 @@
         @stack('js')
         
         <!-- Argon JS -->
+        <script>
+            $(document).ready(function () {
+                $("#exampleModal").modal("show");
+            });
+         </script>
+
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
     </body>
 </html>

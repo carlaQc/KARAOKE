@@ -26,7 +26,7 @@
                             <small>{{ __('Or sign up with credentials') }}</small>
                         </div>
                         <form role="form" method="POST" action="{{ route('register') }}">
-                            @csrf
+                            {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
@@ -54,6 +54,7 @@
                                     </span>
                                 @endif
                             </div>
+
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
