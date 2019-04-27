@@ -23,21 +23,37 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'name' => 'carla',
-            'email' => 'carla@gmail.com',
+            'name' => 'oscar',
+            'email' => 'oscar@gmail.com',
             'password' => Hash::make('123456'),
             'role_id' => '1',
             'created_at' => now(),
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'name' => 'Carlaq',
-            'email' => 'carlaq@gmail.com',
+            'name' => 'carlita',
+            'email' => 'carlita@gmail.com',
+            'password' => Hash::make('123456'),
+            'role_id' => '1',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        
+         DB::table('users')->insert([
+            'name' => 'juan',
+            'email' => 'juan@gmail.com',
+            'password' => Hash::make('123456'),
+            'role_id' => '1',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+         DB::table('users')->insert([
+            'name' => 'laura',
+            'email' => 'laura@gmail.com',
             'password' => Hash::make('123456'),
             'role_id' => '2',
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        
     }
 }
