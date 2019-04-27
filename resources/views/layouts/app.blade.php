@@ -18,7 +18,7 @@
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
     </head>
-    <body class="{{ $class ?? '' }}">
+    <body class="{{ $class ?? '' }}"  style="background-image: url(../../img//22.jpg)  ; background-repeat: no-repeat;  ">
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
@@ -26,7 +26,7 @@
             @include('layouts.navbars.sidebar')
         @endauth
         
-        <div class="main-content">
+        <div class="main-content" >
             @include('layouts.navbars.navbar')
             @yield('content')
         </div>
