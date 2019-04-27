@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\role;
+use App\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -18,7 +18,7 @@ class RoleController extends Controller
     }
     public function index(Role $model)
     {
-         return view('roles.index', ['users' => $model->paginate(15)]);
+        return view('roles.index', ['users' => $model->paginate(15)]);
     }
 
     /**
@@ -28,7 +28,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('roles.create');
+       return view('roles.create');
     }
 
     /**
@@ -39,6 +39,7 @@ class RoleController extends Controller
      */
     public function store(Request $request,Role $model)
     {
+
         $model->create($request->all());
 
         return redirect()->route('role.index')->withStatus(__('User successfully created.'));
@@ -47,10 +48,10 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\role  $role
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(role $role)
+    public function show(Role $role)
     {
         //
     }
@@ -58,12 +59,12 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\role  $role
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(role $role)
+    public function edit(Role $role)
     {
-        
+
         return view('roles.edit', compact('role'));
     }
 
@@ -71,10 +72,10 @@ class RoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\role  $role
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, role $role)
+    public function update(Request $request, Role $role)
     {
         $role->update($request->all());
 
@@ -84,10 +85,10 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\role  $role
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(role $role)
+    public function destroy(Role $role)
     {
         $role->delete();
 
