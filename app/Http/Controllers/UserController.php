@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Role;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,6 +15,7 @@ class UserController extends Controller
      * @param  \App\User  $model
      * @return \Illuminate\View\View
      */
+
     public function index(User $model)
     {
         return view('users.index', ['users' => $model->paginate(15)]);
@@ -24,9 +26,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Role $model)
     {
-        return view('users.create');
+         return view('users.create',['roles' => $model->paginate(15)]);
     }
 
     /**
@@ -51,7 +53,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+       $role=Role::all();
+        return view('users.edit', compact('user'), compact('role'));
     }
 
     /**
