@@ -110,6 +110,11 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Roles') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('role.index')}}">
+                        <i class="ni ni-calendar-grid-58 text-blue"></i> {{ __('Reservas') }}
+                    </a>
+                </li>
 
             </ul>
             <!-- Divider -->
