@@ -13,7 +13,7 @@ class clienteController extends Controller
      */
     public function index()
     {
-        //
+        return view('cliente.registro');
     }
 
     /**
