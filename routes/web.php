@@ -24,5 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
     Route::resource('role', 'RoleController', ['except' => ['show']]);
+
 });
 
+Route::get('Reservas', 'ReservasController@index')->name('Reservas') ;
