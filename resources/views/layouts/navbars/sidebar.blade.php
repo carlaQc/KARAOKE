@@ -84,12 +84,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                    <a class="nav-link" href="#datos-usuarios" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Datos Usuarios') }}</span>
                     </a>
 
-                    <div class="collapse show" id="navbar-examples">
+                    <div class="collapse" id="datos-usuarios">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('profile.edit') }}">
@@ -109,12 +109,12 @@
                 <!--creacion de el link que va a creacion de cliente-->
 
                            <li class="nav-item">
-                    <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                    <a class="nav-link " href="#clientes" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Clientes') }}</span>
                     </a>
 
-                    <div class="collapse show" id="navbar-examples">
+                    <div class="collapse " id="clientes">
                         <ul class="nav nav-sm flex-column">
                              <li class="nav-item">
                                 <a class="nav-link" href="{{ route('cliente.index') }}">
@@ -131,11 +131,36 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Roles') }}
                     </a>
                 </li>
+                
+                <!-- link de reservas -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('Reservas')}}">
-                        <i class="ni ni-calendar-grid-58 text-blue"></i> {{ __('Reservas') }}
+                    <a class="nav-link " href="#Reservas" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="ni ni-calendar-grid-58 text-blue" style="color: #f4645f;"></i>
+                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Reservas') }}</span>
                     </a>
+
+                    <div class="collapse " id="Reservas">
+                        <ul class="nav nav-sm flex-column">
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Reservas') }}">
+                                    {{ __('Registrar Reservas') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse " id="Reservas">
+                        <ul class="nav nav-sm flex-column">
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('TiposDeAmbiente') }}">
+                                    {{ __('Registrar Tipos de Ambientes') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </li>
+
 
             </ul>
             <!-- Divider -->

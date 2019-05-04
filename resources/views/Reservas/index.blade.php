@@ -4,7 +4,7 @@
     @include('layouts.headers.cards')
 <!DOCTYPE html>
 <html>
-<head>
+
 <meta charset='utf-8' />
 <link href='../packages/core/main.css' rel='stylesheet' />
 <link href='../packages/daygrid/main.css' rel='stylesheet' />
@@ -30,6 +30,8 @@
 
 
   document.addEventListener('DOMContentLoaded', function() {
+    var initialLocaleCode = 'es';
+    var localeSelectorEl = document.getElementById('locale-selector');
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -40,17 +42,19 @@
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
       defaultDate: '2019-04-12',
+      locale: initialLocaleCode,
       navLinks: true, // can click day/week names to navigate views
       selectable: true,
       selectMirror: true,
-      select: function(arg) {
-        var title = prompt('Event Title:');
+      select: function(arg ) {
+        
+        var title = prompt('titulo de evento');
         if (title) {
           calendar.addEvent({
             title: title,
             start: arg.start,
-            end: arg.end,
-            allDay: arg.allDay
+            allDay: arg.allDay ,
+            end: arg.end
           })
         }
         calendar.unselect()
@@ -67,6 +71,22 @@
     });
 
     calendar.render();
+  
+     calendar.getAvailableLocaleCodes().forEach(function(localeCode) {
+      var optionEl = document.createElement('option');
+      optionEl.value = localeCode;
+      optionEl.selected = localeCode == initialLocaleCode;
+      optionEl.innerText = localeCode;
+      localeSelectorEl.appendChild(optionEl);
+    });
+
+     localeSelectorEl.addEventListener('change', function() {
+      if (this.value) {
+        calendar.setOption('locale', this.value);
+      }
+    });
+
+
   });
 
 </script>
@@ -82,24 +102,47 @@
   #calendar {
     max-width: 900px;
     margin: 0 auto;
-    color: blue;
+    color: black;
     background-color: white;
   }
 
 </style>
-</head>
-<body >
-	<div id='top'>
+<div id='top'>
 
-    Locales:
-    <select id='locale-selector'></select>
+    <h1 style="color: white;">idioma:</h1>
+    <select id='locale-selector' class="btn btn-primary"></select>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Registrar Reserva
+</button>
 
+<!--- modal de creacion de reserva -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-danger " role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nueva Reserva</h4>
+      </div>
+          {{csrf_field()}}
+        <div class="modal-body">
+            @include('Reservas.FormReserva')
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">guardar</button>
+        </div>
+      </form>
+    </div>
   </div>
+</div>
 
-  <div id='calendar'></div>
-@include('layouts.footers.auth')
-</body>
+
+    
+  </div>
+  <h1 align="center" style="color: white;">Calendario de Reservas </h1>
+  <div id='calendar'> </div>
  
+	
 </html>
 
 
@@ -107,5 +150,6 @@
 
  
 
+@include('layouts.footers.auth')
 
  @endsection

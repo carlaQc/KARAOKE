@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Model;
+
 
 use \App\tipos_de_ambiente;
 
 
-class ReservasController extends Controller
+class TiposDeAmbienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,16 +19,10 @@ class ReservasController extends Controller
     
     public function index()
     {
-        
-        return view('Reservas.index');
-    }
+        $tipos_de_ambiente = DB::table('tipos_de_ambiente')->get();        
+        return view('Reservas.RegistrarTiposDeReservas',compact('tipos_de_ambiente'));
+        }
 
-    public function RegistrosTiposReservas()
-    {
-
-//       $tipos_de_ambiente = tipos_de_ambiente::all();        
-        return view('Reservas.RegistrarTiposDeReservas');
-    }
     public function store(Request $request)
     {
         
