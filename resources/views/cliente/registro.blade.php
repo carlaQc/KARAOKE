@@ -8,51 +8,34 @@
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="card bg-gradient-default shadow">
                     <div class="card-header bg-transparent">
+
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myRegistroCliente">Nuevo
+            </button>
+<!--modal inicio-->
                         
-        <form method="post" action="{{ route('cliente.update') }}" autocomplete="off">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                    {{ csrf_field() }}
-                    {{ method_field('PUT') }}
-                    <h6 class="heading-small text-muted mb-4">{{ __('Registrar cliente') }}</h6>
-                    <div class="pl-lg-4">
-                        <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                            <label class="form-control-label" for="input-name">{{ __('Nombre') }}</label>
-                            <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('Nombre') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombre') }}" value="" required autofocus>
-
-                            @if ($errors->has('name'))
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                            @endif
-                        </div>
-                        <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                            <label class="form-control-label" for="input-email">{{ __('Correo') }}</label>
-                            <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="" required>
-
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                            @endif
-                        </div>
-
-
-                    </div>
-
-            </div>
-
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
-                <button type="submit" class="btn btn-primary">{{ __('GUARDAR') }}</button>
-            </div>
-            </form>
+<div class="modal fade" id="myRegistroCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-danger"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nuevo tipo de evento</h4>
+      </div>
+        <form action="{{route('cliente.update')}}" method="post">
+        {{method_field('patch')}}      
+        {{csrf_field()}}
+          <div class="modal-body">
+          @include('cliente.formRegistroCli')
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--modal modal final-->
 
                 </div>
             </div>
