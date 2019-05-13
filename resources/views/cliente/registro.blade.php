@@ -42,7 +42,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo tipo de evento</h4>
       </div>
-        <form action="{{route('clientes.update','3')}}" method="post">
+        <form action="{{route('clientes.update','test')}}" method="post">
         {{method_field('PATCH')}}      
         {{csrf_field()}}
           <div class="modal-body">
