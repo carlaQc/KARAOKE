@@ -151,6 +151,11 @@
                     </a>
                 </li>
                 <!--termina para proveedores-->
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{route('producto.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Registro de productos') }}
+                    </a>
+                </li>
                 <!-- link de reservas -->
 
                 <li class="nav-item">

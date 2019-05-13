@@ -1,5 +1,5 @@
 <div class="form-group">
-		        	<label for="title">nombre del empleado que registra</label>
+		        	<label for="title">nombre del empleado que registra el precio</label>
 		        	<h3>{{ auth()->user()->name }}</h3>
 	        	</div>
 	        	<input type="hidden" name="id_prec" id="id_prec" value="">
