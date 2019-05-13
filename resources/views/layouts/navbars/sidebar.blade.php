@@ -117,7 +117,7 @@
                     <div class="collapse " id="clientes">
                         <ul class="nav nav-sm flex-column">
                              <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cliente.index') }}">
+                                <a class="nav-link" href="{{ route('clientes.index') }}">
                                     {{ __('registrar de clientes') }}
                                 </a>
                             </li>

@@ -12,8 +12,8 @@
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myRegistroCliente">Nuevo
             </button>
-<!--modal inicio-->
-                        
+
+            <!--modal inicio-->                  
 <div class="modal fade" id="myRegistroCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-danger"  role="document">
     <div class="modal-content">
@@ -21,32 +21,54 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo tipo de evento</h4>
       </div>
-        <form action="{{route('cliente.update')}}" method="post">
-        {{method_field('patch')}}      
+        <form action="{{route('clientes.store')}}" method="post">    
         {{csrf_field()}}
           <div class="modal-body">
           @include('cliente.formRegistroCli')
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
       </form>
     </div>
   </div>
 </div>
-<!--modal modal final-->
+
+<div class="modal fade" id="myEdicionCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-danger"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nuevo tipo de evento</h4>
+      </div>
+        <form action="{{route('clientes.update','3')}}" method="post">
+        {{method_field('PATCH')}}      
+        {{csrf_field()}}
+          <div class="modal-body">
+          @include('cliente.formRegistroCli')
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 
                 </div>
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-xl-8 mb-5 mb-xl-0">
+            <div class="col-xl-12 mb-5 mb-xl-0">
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Page visits</h3>
+                                <h3 class="mb-0">LISTA DE CLIENTES</h3>
                             </div>
                             <div class="col text-right">
                                 <a href="#!" class="btn btn-sm btn-primary">See all</a>
@@ -58,213 +80,75 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Page name</th>
-                                    <th scope="col">Visitors</th>
-                                    <th scope="col">Unique users</th>
-                                    <th scope="col">Bounce rate</th>
+                                <th>nombre</th>
+                                <th>ci</th>
+                                <th>apellido paterno</th>
+                                <th>apellido materno</th>
+                                <th>celular</th>
+                                <th>genero</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @if($clientes->count())  
+                                @foreach($clientes as $cliente)  
                                 <tr>
-                                    <th scope="row">
-                                        /argon/
-                                    </th>
+                                    <td>{{$cliente->nombre_cli}}</td>
+                                    <td>{{$cliente->ci_cli}}</td>
+                                    <td>{{$cliente->paterno_cli}}</td>
+                                    <td>{{$cliente->materno_cli}}</td>
+                                    <td>{{$cliente->celular_cli}}</td>
+                                    <td>{{$cliente->genero_cli}}</td>
                                     <td>
-                                        4,569
-                                    </td>
-                                    <td>
-                                        340
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/index.html
-                                    </th>
-                                    <td>
-                                        3,985
-                                    </td>
-                                    <td>
-                                        319
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/charts.html
-                                    </th>
-                                    <td>
-                                        3,513
-                                    </td>
-                                    <td>
-                                        294
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/tables.html
-                                    </th>
-                                    <td>
-                                        2,050
-                                    </td>
-                                    <td>
-                                        147
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/profile.html
-                                    </th>
-                                    <td>
-                                        1,795
-                                    </td>
-                                    <td>
-                                        190
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4">
-                <div class="card shadow">
-                    <div class="card-header border-0">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h3 class="mb-0">Social traffic</h3>
-                            </div>
-                            <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <!-- Projects table -->
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">Referral</th>
-                                    <th scope="col">Visitors</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        Facebook
-                                    </th>
-                                    <td>
-                                        1,480
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">60%</span>
-                                            <div>
-                                                <div class="progress">
-                                                <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Facebook
-                                    </th>
-                                    <td>
-                                        5,480
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">70%</span>
-                                            <div>
-                                                <div class="progress">
-                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Google
-                                    </th>
-                                    <td>
-                                        4,807
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">80%</span>
-                                            <div>
-                                                <div class="progress">
-                                                <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Instagram
-                                    </th>
-                                    <td>
-                                        3,678
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">75%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        twitter
-                                    </th>
-                                    <td>
-                                        2,645
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">30%</span>
-                                            <div>
-                                                <div class="progress">
-                                                <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <button type="button" class="btn btn-success" data-myid="{{$cliente->id_cli}}" data-mynombre="{{$cliente->nombre_cli}}" data-myci="{{$cliente->ci_cli}}" data-mypaterno="{{$cliente->paterno_cli}}" data-mymaterno="{{$cliente->materno_cli}}" data-mycelular="{{$cliente->celular_cli}}" data-mygenero="{{$cliente->genero_cli}}"data-toggle="modal" data-target="#myEdicionCliente">edit</button> 
+                                        </td>
+                                        <td>
+                                        <button type="button" class="btn btn-danger data-toggle="modal" data-target="#myEdicionCliente"">eliminar</button>
+                                        </td>
+                                    </tr>
+
+                                    @endforeach 
+                                    @else
+                                    <tr>
+                                        <td colspan="8">No hay registro !!</td>
+                                    </tr>
+                                    @endif
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
 
-        @include('layouts.footers.auth')
+
+    </div>
     </div>
 @endsection
 
 @push('js')
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+<script>
+        $('#myEdicionCliente').on('show.bs.modal',function(event){
+            var button = $(event.relatedTarget)
+            var id_cli = button.data('myid')
+            var nombre_cli = button.data('mynombre')
+            var ci_cli = button.data('myci')
+            var paterno_cli = button.data('mypaterno')
+            var materno_cli = button.data('mymaterno')
+            var celular_cli = button.data('mycelular')
+            var genero_cli = button.data('mygenero') 
+            var modal = $(this)
+            modal.find('.modal-body #id_cli').val(id_cli);
+            modal.find('.modal-body #nombre_cli').val(nombre_cli);
+            modal.find('.modal-body #ci_cli').val(ci_cli);
+            modal.find('.modal-body #paterno_cli').val(paterno_cli);
+             modal.find('.modal-body #materno_cli').val(materno_cli);
+            modal.find('.modal-body #celular_cli').val(celular_cli);
+            modal.find('.modal-body #genero_cli').val(genero_cli);
+        })
+    </script>
+
 @endpush
