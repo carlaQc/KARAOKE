@@ -138,6 +138,11 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Proveedores') }}
                     </a>
                 </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="{{route('precio.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Precio de productos') }}
+                    </a>
+                </li>
                 <!--termina para proveedores-->
                   <!--esto es para proveedores-->
                   <li class="nav-item">
