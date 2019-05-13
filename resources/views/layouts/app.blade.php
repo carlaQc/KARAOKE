@@ -35,12 +35,18 @@
             @include('layouts.footers.guest')
         @endguest
 
+        
+
+
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         
         @stack('js')
         
+
         <!-- Argon JS -->
+        
+
         <script>
             $(document).ready(function () {
                 $("#exampleModal").modal("show");
@@ -48,5 +54,40 @@
          </script>
 
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+        <script>
+
+  
+  $('#edit').on('show.bs.modal', function (event) {
+
+      var button = $(event.relatedTarget) 
+      var nombre = button.data('nombre') 
+      var capacidad = button.data('capacidad') 
+      var nombre = button.data('costo') 
+      var capacidad = button.data('disponible') 
+      var tipam_id = button.data('tipamid') 
+      var modal = $(this)
+
+      modal.find('.modal-body #nombre').val(nombre);
+      modal.find('.modal-body #capacidad').val(capacidad);
+      modal.find('.modal-body #costo').val(costo);
+      modal.find('.modal-body #disponibe').val(disponible);
+      modal.find('.modal-body #tip_id').val(tip_id);
+})
+
+
+  $('#delete').on('show.bs.modal', function (event) {
+
+      var button = $(event.relatedTarget) 
+
+      var cat_id = button.data('catid') 
+      var modal = $(this)
+
+      modal.find('.modal-body #cat_id').val(cat_id);
+})
+
+
+</script>
+    
+
     </body>
 </html>

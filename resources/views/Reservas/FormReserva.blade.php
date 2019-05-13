@@ -1,4 +1,4 @@
-		<div class="form-group">
+		<div>
 		        	<label for="title">nombre del empleado</label>
 		        	<h3>{{ auth()->user()->name }}</h3>
 		        	

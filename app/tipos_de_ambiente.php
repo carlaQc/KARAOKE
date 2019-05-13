@@ -8,5 +8,7 @@ class tipos_de_ambiente extends Model
 {
     //
 
-    protected $fillable = ['nombre','capacidad','costo','disponible'];
+    protected $fillable = ['id', 'nombre','capacidad','costo','disponible'];
+
+    protected $table = "tipos_de_ambiente";
 }

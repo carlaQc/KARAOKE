@@ -152,7 +152,7 @@
                     <div class="collapse " id="Reservas">
                         <ul class="nav nav-sm flex-column">
                              <li class="nav-item">
-                                <a class="nav-link" href="{{ route('TiposDeAmbiente') }}">
+                                <a class="nav-link" href="{{ url('TiposDeAmbiente') }}">
                                     {{ __('Registrar Tipos de Ambientes') }}
                                 </a>
                             </li>
@@ -170,3 +170,4 @@
         </div>
     </div>
 </nav>
+

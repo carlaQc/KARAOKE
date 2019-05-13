@@ -32,5 +32,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('Reservas', 'ReservasController@index')->name('Reservas') ;
 
-Route::get('TiposDeAmbiente', 'TiposDeAmbienteController@index')->name('TiposDeAmbiente') ;
+Route::resource('TiposDeAmbiente', 'TiposDeAmbienteController') ;
 

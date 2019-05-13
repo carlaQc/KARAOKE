@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
-use \App\tipos_de_ambiente;
+use App\tipos_de_ambiente;
 
 
 class TiposDeAmbienteController extends Controller
@@ -25,11 +23,21 @@ class TiposDeAmbienteController extends Controller
 
     public function store(Request $request)
     {
+        //dd($request->all());
         
         tipos_de_ambiente::create($request->all());
-
         return back();  
     }
+    public function update(Request $request)
+    {
+
+        $tipos_de_ambiente = DB::findOrFail($request->tipos_de_ambiente_id);
+
+        $tipos_de_ambiente->update($request->all());
+       
+        return back();
+    }
+
 
 
 
