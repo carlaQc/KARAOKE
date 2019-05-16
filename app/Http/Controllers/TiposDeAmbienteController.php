@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 use App\tipos_de_ambiente;
 
 
@@ -30,10 +32,12 @@ class TiposDeAmbienteController extends Controller
     }
     public function update(Request $request)
     {
-
-        $tipos_de_ambiente = DB::findOrFail($request->tipos_de_ambiente_id);
+        
+        //dd($request->all());
+       $tipos_de_ambiente = tipos_de_ambiente::findOrFail($request->tipos_de_ambiente_id);
 
         $tipos_de_ambiente->update($request->all());
+    
        
         return back();
     }

@@ -57,38 +57,5 @@
             </li>
         </ul>
     </div>
-    <script>
-
-  
-  $('#edit').on('show.bs.modal', function (event) {
-
-      var button = $(event.relatedTarget) 
-      var nombre = button.data('nombre') 
-      var capacidad = button.data('capacidad') 
-      var nombre = button.data('costo') 
-      var capacidad = button.data('disponible') 
-      var tipam_id = button.data('tipamid') 
-      var modal = $(this)
-
-      modal.find('.modal-body #nombre').val(nombre);
-      modal.find('.modal-body #capacidad').val(capacidad);
-      modal.find('.modal-body #costo').val(costo);
-      modal.find('.modal-body #disponibe').val(disponible);
-      modal.find('.modal-body #tip_id').val(tip_id);
-})
-
-
-  $('#delete').on('show.bs.modal', function (event) {
-
-      var button = $(event.relatedTarget) 
-
-      var cat_id = button.data('catid') 
-      var modal = $(this)
-
-      modal.find('.modal-body #cat_id').val(cat_id);
-})
-
-
-</script>
-
+    
 </nav>

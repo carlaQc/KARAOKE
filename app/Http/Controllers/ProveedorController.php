@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use App\Clientes;
+use App\Proveedores;
 
-class ClienteController extends Controller
+class ProveedorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = DB::table('clientes')->get();
+        $proveedores = DB::table('proveedores')->get();
         //dd($clientes);
-        return view ('cliente.registro',compact('clientes'));
+        return view ('proveedores.registroProv',compact('proveedores'));
     }
 
     /**
@@ -42,29 +42,26 @@ class ClienteController extends Controller
     {
         $this->validate($request,[
     
-        'nombre_cli' => 'required',
-        'ci_cli' => 'required',
-        'paterno_cli' => 'required',
-        'materno_cli' => 'required',
-        'celular_cli' => 'required',
+        'nombre_prov' => 'required',
+        'nit_prov' => 'required',
+        'celular_prov' => 'required',
+        'direccion_prov' => 'required',
         ]);
         //Clientes::create($request->all());
         //return back();
 
         $data = $request;
-        $cliente = new Clientes;
-        $cliente->nombre_cli=$data['nombre_cli'];
-        $cliente->ci_cli=$data['ci_cli'];
-        $cliente->paterno_cli=$data['paterno_cli'];
-        $cliente->materno_cli=$data['materno_cli'];
-        $cliente->celular_cli=$data['celular_cli'];
-        $cliente->genero_cli=$data['genero_cli'];
+        $proveedores = new Proveedores;
+        $proveedores->nombre_prov=$data['nombre_prov'];
+        $proveedores->nit_prov=$data['nit_prov'];
+        $proveedores->celular_prov=$data['celular_prov'];
+        $proveedores->direccion_prov=$data['direccion_prov'];
 
-        if($cliente -> save()){
+        if($proveedores -> save()){
             return back();
         }else{
             //return "no se ha registrado correctamente el usuario";
-            return view('myRegistroCliente');
+            
         }
     }
 
@@ -76,7 +73,7 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        //
+    //
     }
 
     /**
@@ -97,27 +94,24 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
     
-        'nombre_cli' => 'required',
-        'ci_cli' => 'required',
-        'paterno_cli' => 'required',
-        'materno_cli' => 'required',
-        'celular_cli' => 'required',
+        'nombre_prov' => 'required',
+        'nit_prov' => 'required',
+        'celular_prov' => 'required',
+        'direccion_prov' => 'required',
         ]);
         //Clientes::create($request->all());
         //return back();
 
-        $cliente =Clientes::findOrFail($request->id_cli);
-        $cliente->update([
-        'nombre_cli' => $request['nombre_cli'],
-        'ci_cli' => $request['ci_cli'],
-        'paterno_cli' => $request['paterno_cli'],
-        'materno_cli' => $request['materno_cli'],
-        'celular_cli' => $request['celular_cli'],
-        'genero_cli' => $request['genero_cli'],
+        $proveedor =Proveedores::findOrFail($request->id_prov);
+        $proveedor->update([
+        'nombre_prov' => $request['nombre_prov'],
+        'nit_prov' => $request['nit_prov'],
+        'celular_prov' => $request['celular_prov'],
+        'direccion_prov' => $request['direccion_prov'],
         ]);
        
         //dd($id);

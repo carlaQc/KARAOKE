@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use App\Clientes;
+use App\Precios;
 
-class ClienteController extends Controller
+class PrecioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = DB::table('clientes')->get();
+        $precios = DB::table('precios')->get();
         //dd($clientes);
-        return view ('cliente.registro',compact('clientes'));
+        return view ('precios.registroPrec',compact('precios'));
     }
 
     /**
@@ -42,29 +42,22 @@ class ClienteController extends Controller
     {
         $this->validate($request,[
     
-        'nombre_cli' => 'required',
-        'ci_cli' => 'required',
-        'paterno_cli' => 'required',
-        'materno_cli' => 'required',
-        'celular_cli' => 'required',
+        'cpaquete_prec' => 'required',
+        'cunitario_prec' => 'required',
         ]);
         //Clientes::create($request->all());
         //return back();
 
         $data = $request;
-        $cliente = new Clientes;
-        $cliente->nombre_cli=$data['nombre_cli'];
-        $cliente->ci_cli=$data['ci_cli'];
-        $cliente->paterno_cli=$data['paterno_cli'];
-        $cliente->materno_cli=$data['materno_cli'];
-        $cliente->celular_cli=$data['celular_cli'];
-        $cliente->genero_cli=$data['genero_cli'];
+        $precios = new Precios;
+        $precios->cpaquete_prec=$data['cpaquete_prec'];
+        $precios->cunitario_prec=$data['cunitario_prec'];
 
-        if($cliente -> save()){
+        if($precios -> save()){
             return back();
         }else{
             //return "no se ha registrado correctamente el usuario";
-            return view('myRegistroCliente');
+            
         }
     }
 
@@ -97,27 +90,21 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
     
-        'nombre_cli' => 'required',
-        'ci_cli' => 'required',
-        'paterno_cli' => 'required',
-        'materno_cli' => 'required',
-        'celular_cli' => 'required',
+        'cpaquete_prec' => 'required',
+        'cunitario_prec' => 'required',
+
         ]);
         //Clientes::create($request->all());
         //return back();
 
-        $cliente =Clientes::findOrFail($request->id_cli);
-        $cliente->update([
-        'nombre_cli' => $request['nombre_cli'],
-        'ci_cli' => $request['ci_cli'],
-        'paterno_cli' => $request['paterno_cli'],
-        'materno_cli' => $request['materno_cli'],
-        'celular_cli' => $request['celular_cli'],
-        'genero_cli' => $request['genero_cli'],
+        $precio =Precios::findOrFail($request->id_prec);
+        $precio->update([
+        'cpaquete_prec' => $request['cpaquete_prec'],
+        'cunitario_prec' => $request['cunitario_prec'],
         ]);
        
         //dd($id);
