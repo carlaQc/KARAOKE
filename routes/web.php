@@ -24,13 +24,16 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
     Route::resource('role', 'RoleController', ['except' => ['show']]);
-
-    Route::put('cliente', ['as' => 'cliente.update', 'uses' => 'ClienteController@update']);
-    Route::get('cliente', ['as' => 'cliente.index', 'uses' => 'ClienteController@index']);
+    //Route::resource('cli', 'ClienteController', ['except' => ['show']]);
 
 });
-
+Route::resource('clientes','clienteController');
+Route::resource('proveedor','ProveedorController');
+Route::resource('precio','PrecioController');
+Route::resource('producto','ProductoController');
+//Route::post('clientes', 'clienteController@modificacion')->name('modCli');
+//Route::post('clientes', 'clienteController@registro')->name('regCli');
+//Route::get('clientes', ['as' => 'cliente.index', 'uses' => 'clienteController@index']);
 Route::get('Reservas', 'ReservasController@index')->name('Reservas') ;
-
 Route::get('TiposDeAmbiente', 'TiposDeAmbienteController@index')->name('TiposDeAmbiente') ;
 

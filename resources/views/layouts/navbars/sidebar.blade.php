@@ -108,7 +108,7 @@
 
                 <!--creacion de el link que va a creacion de cliente-->
 
-                           <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link " href="#clientes" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Clientes') }}</span>
@@ -117,7 +117,7 @@
                     <div class="collapse " id="clientes">
                         <ul class="nav nav-sm flex-column">
                              <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cliente.index') }}">
+                                <a class="nav-link" href="{{ route('clientes.index') }}">
                                     {{ __('registrar de clientes') }}
                                 </a>
                             </li>
@@ -132,6 +132,30 @@
                     </a>
                 </li>
                 
+                <!--esto es para proveedores-->
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('proveedor.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Proveedores') }}
+                    </a>
+                </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="{{route('precio.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Precio de productos') }}
+                    </a>
+                </li>
+                <!--termina para proveedores-->
+                  <!--esto es para proveedores-->
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('role.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Tipo de producto') }}
+                    </a>
+                </li>
+                <!--termina para proveedores-->
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{route('producto.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Registro de productos') }}
+                    </a>
+                </li>
                 <!-- link de reservas -->
 
                 <li class="nav-item">
