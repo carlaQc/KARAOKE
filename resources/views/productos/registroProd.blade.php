@@ -91,7 +91,7 @@
                                 @foreach($productos as $producto)  
                                 <tr>
                                     <td>{{$producto->nombre_prod}}</td>
-                                    <td>{{$producto->cantidad_prod}}</td>
+                                    <td>{{$producto->cant_prod}}</td>
                                     <td>{{$producto->fing_prod}}</td>
                                     <td>{{$producto->fven_prod}}</td>
                                     <td>

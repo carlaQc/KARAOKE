@@ -104,7 +104,31 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+    
+        'nombre_prod' => 'required',
+        'cant_prod' => 'required',
+        'fing_prod' => 'required',
+        'fven_prod' => 'required',
+        'id_prec' => 'required',
+        'id_prod' => 'required',
+        ]);
+        //Clientes::create($request->all());
+        //return back();
+
+        $productos =Productos::findOrFail($request->id_prod);
+        $productos->update([
+        'nombre_prod' => $request['nombre_prod'],
+        'cant_prod' => $request['cant_prod'],
+        'fing_prod' => $request['fing_prod'],
+        'fven_prod' => $request['fven_prod'],
+        'id_prec' => $request['id_prec'],
+        'id_prov' => $request['id_prov'],
+        ]);
+       
+        //dd($id);
+        //dd($request->all());
+        return back();
     }
 
     /**
