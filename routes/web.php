@@ -39,3 +39,6 @@ Route::get('Reservas', 'ReservasController@index')->name('Reservas') ;
 Route::resource('TiposDeAmbiente', 'TiposDeAmbienteController') ;
 Route::get('TiposDeAmbiente', 'TiposDeAmbienteController@index')->name('TiposDeAmbiente') ;
 
+Route::get('OrdenMaestro', 'OrdenMaestroController@index')->name('OrdenMaestro') ;
+
+

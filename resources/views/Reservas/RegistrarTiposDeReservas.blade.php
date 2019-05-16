@@ -99,16 +99,16 @@
 
 <!-- Modal -->
 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-info" role="document">
+  <div class="modal-dialog " role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header  "  style="background-color: orangered;" >
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Editar tipos de ambientes</h4>
       </div>
        <form action="{{route('TiposDeAmbiente.update','test')}}" method="post">
       		{{method_field('patch')}}
       		{{csrf_field()}}
-	      <div class="modal-body">
+	      <div class="modal-body " style="background-color:;"  >
 	      	<input type="hidden" name="tipos_de_ambiente_id" id="tip_id" value="">
 	      	@include('Reservas.FormTipoDeReserva')
 	      </div>

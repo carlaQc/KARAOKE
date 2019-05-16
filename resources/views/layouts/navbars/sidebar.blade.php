@@ -138,6 +138,16 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Proveedores') }}
                     </a>
                 </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link " href="#productos" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="fab fa-laravel" style="color: #f4645f;"></i>
+                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Productos') }}</span>
+                    </a>
+
+                    <div class="collapse " id="productos">
+                        <ul class="nav nav-sm flex-column">
+                    
                    <li class="nav-item">
                     <a class="nav-link" href="{{route('precio.index')}}">
                         <i class="ni ni-planet text-blue"></i> {{ __('Precio de productos') }}
@@ -156,7 +166,17 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Registro de productos') }}
                     </a>
                 </li>
-                <!-- link de reservas -->
+               </ul>
+               </div>
+               </li> 
+               
+
+               <li class="nav-item">
+                    <a class="nav-link" href="{{route('OrdenMaestro')}}">
+                        <i class="ni ni-planet t1ext-blue"></i> {{ __('Orden Maestro') }}
+                    </a>
+                </li>
+               <!-- link de reservas -->
 
                 <li class="nav-item">
                     <a class="nav-link " href="#Reservas" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">

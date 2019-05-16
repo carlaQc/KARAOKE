@@ -5,11 +5,11 @@
 	        	</div>
 	    <div class="form-group">
 		        	<label for="title">nombre del evento</label>
-		        	<input type="text" class="form-control" name="nombre" id="nombre" >
+		        	<input type="text" class="form-control" name="nombre" id="nombre" required>
 	        	</div>
 	    <div class="form-group">
 		        	<label for="title">capacidad</label>
-		        	<input type="text" class="form-control" name="capacidad" id="capacidad" required>
+		        	<input type="text" class="form-control" name="capacidad" id="capacidad" required="introduce la capacidad">
 	        	</div> 
 	    <div class="form-group">
 		        	<label for="title">costo por hora</label>
