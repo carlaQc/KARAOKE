@@ -15,7 +15,6 @@
 				<h3 class="col-8">Tipos de Ambiente </h3>
 			
 			</div>
-
 			<div class="col-2 text-right">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nuevo
 			</button>                
@@ -46,7 +45,18 @@
 								<td>{{$tip->capacidad}}</td>
 								<td>{{$tip->costo}}</td>
 								<td>{{$tip->disponible}}</td>
-								
+								<td>
+            						<button type="button" class="btn btn-success" data-mynombre="{{$tip->nombre}}" data-mycapacidad="{{$tip->capacidad}}" data-mycosto="{{$tip->costo}}" data-mydisponible="{{$tip->disponible}}" data-tipid="{{$tip->id}}" 
+            						 data-toggle="modal" data-target="#edit"
+            						>Editar
+									</button>                
+            						
+            						<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Eliminar
+									</button>                
+            						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">ver
+									</button> 
+            				
+            					</td>
 								<td>
 									</td>
 							</tr>
@@ -66,16 +76,16 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-danger"  role="document">
+  <div class="modal-dialog modal-danger "  role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header "  >
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo tipo de evento</h4>
       </div>
-		        
-   
+	         <form action="{{route('TiposDeAmbiente.store','test')}}" method="post">
+     
       		{{csrf_field()}}
-	      <div class="modal-body">
+	      <div class="modal-body"  >
 	      @include('Reservas.FormTipoDeReserva')
 	      </div>
 	      <div class="modal-footer">
@@ -89,19 +99,23 @@
 
 <!-- Modal -->
 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog " role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header  "  style="background-color: orangered;" >
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Edit Category</h4>
+        <h4 class="modal-title" id="myModalLabel">Editar tipos de ambientes</h4>
       </div>
+       <form action="{{route('TiposDeAmbiente.update','test')}}" method="post">
       		{{method_field('patch')}}
       		{{csrf_field()}}
-	      <div class="modal-body">
+	      <div class="modal-body " style="background-color:;"  >
+	      	<input type="hidden" name="tipos_de_ambiente_id" id="tip_id" value="">
+	      	@include('Reservas.FormTipoDeReserva')
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn btn-primary">Save Changes</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+	       
+	        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
 	      </div>
       </form>
     </div>
@@ -134,5 +148,5 @@
 </div>
 
 
-
  @endsection
+ 
