@@ -24,13 +24,12 @@ class ProductoController extends Controller
         $precios = DB::table('precios')->get();
         $productos = DB::table('productos')->get();
         $tproductos = DB::table('tipo_de_productos')->get();
-        //dd($clientes);
         return view ('Productos.registroProd',compact('proveedores','precios','productos','tproductos'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * jajajaj
      * @return \Illuminate\Http\Response
      */
     public function create()

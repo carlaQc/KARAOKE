@@ -25,7 +25,7 @@ class CreateTipoDeProductosTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
+     * creamos modificaciones
      * @return void
      */
     public function down()

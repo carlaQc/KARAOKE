@@ -19,7 +19,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">NUEVO TIPO DE PRODUCTO</h4>
+        <h4 class="modal-title" id="myModalLabel">NUEVO TIPO DE PRODUCTOs</h4>
       </div>
         <form action="{{route('tproducto.store')}}" method="post">    
         {{csrf_field()}}

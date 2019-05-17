@@ -18,7 +18,6 @@ class tipoDeProductosController extends Controller
     public function index()
     {
          $tProductos = DB::table('tipo_de_productos')->get();
-        //dd($clientes);
         return view ('tipoProducto.tipoProd',compact('tProductos'));
     }
 

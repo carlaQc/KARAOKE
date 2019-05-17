@@ -10,4 +10,5 @@ class tipo_de_producto extends Model
         'marca_tprod', 'prep_tprod', 'desc_tprod', 'estado_tprod',
     ];
     protected $primaryKey = 'id_tprod';
+    //proteccion de primary key
 }

@@ -13,7 +13,7 @@
                     @endif
 	        	</div>
 		<div class="form-group">
-					<label for="title">producto preparado </label>
+					<label for="title"> el producto es preparado</label>
 		        	<input type="checkbox" class="form-control" name="prep_tprod" id="prep_tprod" value="1">
 
 		        	@if ($errors->has('prep_tprod'))

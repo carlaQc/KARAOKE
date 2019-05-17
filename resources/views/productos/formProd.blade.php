@@ -22,7 +22,7 @@
                     @endif
 	        	</div>
 	    <div class="form-group">
-	    			<label for="title">fecha de ingreso del producto</label>
+	    			<label for="title">fecha de ingreso de productos</label>
 		        	<input type="date" class="form-control" name="fing_prod" id="fing_prod" placeholder="fecha de ingreso" value="{{ old('fing_prod') }}">
 
 		        	@if ($errors->has('fing_prod'))
