@@ -31,9 +31,8 @@ Route::resource('clientes','clienteController');
 Route::resource('proveedor','ProveedorController');
 Route::resource('precio','PrecioController');
 Route::resource('producto','ProductoController');
-//Route::post('clientes', 'clienteController@modificacion')->name('modCli');
-//Route::post('clientes', 'clienteController@registro')->name('regCli');
-//Route::get('clientes', ['as' => 'cliente.index', 'uses' => 'clienteController@index']);
+Route::resource('tproducto','tipoDeProductosController');
+
 Route::get('Reservas', 'ReservasController@index')->name('Reservas') ;
 
 Route::resource('TiposDeAmbiente', 'TiposDeAmbienteController') ;

@@ -21,12 +21,15 @@ class CreateProductosTable extends Migration
             $table->datetime('fven_prod');
             $table->integer('id_prec')->unsigned();
             $table->integer('id_prov')->unsigned();
+            $table->integer('id_tprod')->unsigned();
             $table->string('estado_prod',2)->default('a');
             $table->timestamps();
 
             $table->foreign('id_prec')->references('id_prec')->on('precios')
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_prov')->references('id_prov')->on('proveedores')
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_tprod')->references('id_tprod')->on('tipo_de_productos')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }
