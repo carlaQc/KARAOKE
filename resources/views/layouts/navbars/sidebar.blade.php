@@ -170,6 +170,12 @@
                </div>
                </li> 
                
+               <li class="nav-item">
+                    <a class="nav-link" href="{{route('inventario')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Inventarios') }}
+                    </a>
+                </li>
+
 
                <li class="nav-item">
                     <a class="nav-link" href="{{route('OrdenMaestro')}}">

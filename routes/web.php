@@ -41,4 +41,4 @@ Route::get('TiposDeAmbiente', 'TiposDeAmbienteController@index')->name('TiposDeA
 
 Route::get('OrdenMaestro', 'OrdenMaestroController@index')->name('OrdenMaestro') ;
 
-
+Route::get('inventario', 'InventarioController@index')->name('inventario') ;
