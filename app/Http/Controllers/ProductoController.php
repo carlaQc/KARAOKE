@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Productos;
 use App\Proveedores;
 use App\Precios;
+use App\tipo_de_producto;
 
 class ProductoController extends Controller
 {
@@ -22,8 +23,9 @@ class ProductoController extends Controller
         $proveedores = DB::table('proveedores')->get();
         $precios = DB::table('precios')->get();
         $productos = DB::table('productos')->get();
+        $tproductos = DB::table('tipo_de_productos')->get();
         //dd($clientes);
-        return view ('Productos.registroProd',compact('proveedores','precios','productos'));
+        return view ('Productos.registroProd',compact('proveedores','precios','productos','tproductos'));
     }
 
     /**
@@ -52,6 +54,7 @@ class ProductoController extends Controller
         'fven_prod' => 'required',
         'id_prec' => 'required',
         'id_prov' => 'required',
+        'id_tprod' => 'required',
         ]);
         //Clientes::create($request->all());
         //return back();
@@ -64,6 +67,7 @@ class ProductoController extends Controller
         $productos->fven_prod=$data['fven_prod'];
         $productos->id_prec=$data['id_prec'];
         $productos->id_prov=$data['id_prov'];
+        $productos->id_tprod=$data['id_tprod'];
 
         if($productos -> save()){
             return back();

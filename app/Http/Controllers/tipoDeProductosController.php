@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use App\Clientes;
+use App\tipo_de_producto;
 
-class ClienteController extends Controller
+class tipoDeProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = DB::table('clientes')->get();
+         $tProductos = DB::table('tipo_de_productos')->get();
         //dd($clientes);
-        return view ('cliente.registro',compact('clientes'));
+        return view ('tipoProducto.tipoProd',compact('tProductos'));
     }
 
     /**
@@ -40,27 +40,32 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
+        
         $this->validate($request,[
     
-        'nombre_cli' => 'required',
-        'ci_cli' => 'required',
-        'paterno_cli' => 'required',
-        'materno_cli' => 'required',
-        'celular_cli' => 'required',
+        'marca_tprod' => 'required',
+        'desc_tprod' => 'required',
         ]);
         //Clientes::create($request->all());
         //return back();
 
-        $data = $request;
-        $cliente = new Clientes;
-        $cliente->nombre_cli=$data['nombre_cli'];
-        $cliente->ci_cli=$data['ci_cli'];
-        $cliente->paterno_cli=$data['paterno_cli'];
-        $cliente->materno_cli=$data['materno_cli'];
-        $cliente->celular_cli=$data['celular_cli'];
-        $cliente->genero_cli=$data['genero_cli'];
 
-        if($cliente -> save()){
+        $data = $request;
+        $tprod = new tipo_de_producto;
+        $preparable = $data['prep_tprod'];
+        if ($preparable == 1){
+            $tprod->marca_tprod=$data['marca_tprod'];
+            $tprod->prep_tprod=$data['prep_tprod'];
+            $tprod->desc_tprod=$data['desc_tprod'];
+        }else{
+            $tprod->marca_tprod=$data['marca_tprod'];
+            $tprod->prep_tprod=0;
+            $tprod->desc_tprod=$data['desc_tprod'];    
+        }
+        
+
+        if($tprod -> save()){
             return back();
         }else{
             //return "no se ha registrado correctamente el usuario";
@@ -98,32 +103,9 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $this->validate($request,[
-    
-        'nombre_cli' => 'required',
-        'ci_cli' => 'required',
-        'paterno_cli' => 'required',
-        'materno_cli' => 'required',
-        'celular_cli' => 'required',
-        ]);
-        //Clientes::create($request->all());
-        //return back();
-
-        $cliente =Clientes::findOrFail($request->id_cli);
-        $cliente->update([
-        'nombre_cli' => $request['nombre_cli'],
-        'ci_cli' => $request['ci_cli'],
-        'paterno_cli' => $request['paterno_cli'],
-        'materno_cli' => $request['materno_cli'],
-        'celular_cli' => $request['celular_cli'],
-        'genero_cli' => $request['genero_cli'],
-        ]);
-       
-        //dd($id);
-        //dd($request->all());
-        return back();
+        //
     }
 
     /**

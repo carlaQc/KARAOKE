@@ -22,6 +22,7 @@
                     @endif
 	        	</div>
 	    <div class="form-group">
+	    			<label for="title">fecha de ingreso del producto</label>
 		        	<input type="date" class="form-control" name="fing_prod" id="fing_prod" placeholder="fecha de ingreso" value="{{ old('fing_prod') }}">
 
 		        	@if ($errors->has('fing_prod'))
@@ -31,6 +32,7 @@
                     @endif
 	        	</div>
 	    <div class="form-group">
+	    	<label for="title">fecha de vencimiento del producto</label>
 		        	<input type="date" class="form-control" name="fven_prod" id="fven_prod" placeholder="fecha de vencimiento" value="{{ old('fven_prod') }}">
 
 		        	@if ($errors->has('fven_prod'))
@@ -54,6 +56,15 @@
 		        		@if($proveedores->count())  
                         @foreach($proveedores as $proveedor)
 		        		<option value="{{$proveedor->id_prov}}" selected="">{{$proveedor->nombre_prov}}</option>@endforeach 
+                        @endif	        			
+		        	</select>
+	        	</div>
+	        	<div class="form-group">
+		        	<label for="title">Tipo de Producto</label>
+		        	<select name="id_tprod" size="1" class="form-control">
+		        		@if($tproductos->count())  
+                        @foreach($tproductos as $tproducto)
+		        		<option value="{{$tproducto->id_tprod}}" selected="">{{$tproducto->marca_tprod}}</option>@endforeach 
                         @endif	        			
 		        	</select>
 	        	</div>
