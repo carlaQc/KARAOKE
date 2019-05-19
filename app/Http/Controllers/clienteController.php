@@ -66,6 +66,7 @@ class ClienteController extends Controller
             //return "no se ha registrado correctamente el usuario";
             return view('myRegistroCliente');
         }
+        
     }
 
     /**
