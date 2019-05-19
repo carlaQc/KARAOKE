@@ -172,7 +172,7 @@
                
 
                <li class="nav-item">
-                    <a class="nav-link" href="{{route('OrdenMaestro')}}">
+                    <a class="nav-link" href="{{route('OrdenMaestro.index')}}">
                         <i class="ni ni-planet t1ext-blue"></i> {{ __('Orden Maestro') }}
                     </a>
                 </li>
