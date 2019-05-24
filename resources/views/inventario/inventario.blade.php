@@ -30,20 +30,22 @@
 							<th>Ingreso</th>
 							<th>Salida</th>
 							<th>Fecha</th>
-							<th>Estado</th>
-							<th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Aumentar Stock
-			</button>  </th>
+							
 						</tr>
 					</thead>
 
 					<tbody>
 						
-						@foreach($productos as $producto)  
+						@foreach($inventarios as $inventario)  
                                 <tr>
-                                <td></td>
-                                <td>{{$producto->nombre_prod}}</td>
-                                <td></td>
-                                 <td>{{$producto->cant_prod}}</td> 
+                                <td>{{$inventario->id_inv}}</td>
+                                <td>{{$inventario->nombre_inv}}</td>
+                                 <td>{{$inventario->accion_inv}}</td>
+                                 <td>{{$inventario->stock_inv}}</td> 
+                                 <td>{{$inventario->ing_inv}}</td>
+                                 <td>{{$inventario->sal_inv}}</td>
+                                 <td>{{$inventario->f_inv}}</td>
+                                 <td></td>
                                 </tr>
 					  @endforeach
 					</tbody>

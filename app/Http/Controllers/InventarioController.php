@@ -18,8 +18,8 @@ class InventarioController extends Controller
     
     public function index()
     {
-         $productos = DB::table('productos')->get();
-        return view('inventario.inventario',compact('productos'));
+         $inventarios = DB::table('inventarios')->get();
+        return view('inventario.inventario',compact('inventarios'));
 
 
         }
