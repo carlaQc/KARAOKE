@@ -99,7 +99,7 @@
                                     <td>{{$cliente->celular_cli}}</td>
                                     <td>{{$cliente->genero_cli}}</td>
                                     <td>
-                                    <button type="button" class="btn btn-success" data-myid="{{$cliente->id_cli}}" data-mynombre="{{$cliente->nombre_cli}}" data-myci="{{$cliente->ci_cli}}" data-mypaterno="{{$cliente->paterno_cli}}" data-mymaterno="{{$cliente->materno_cli}}" data-mycelular="{{$cliente->celular_cli}}" data-mygenero="{{$cliente->genero_cli}}"data-toggle="modal" data-target="#myEdicionCliente">edit</button> 
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myEdicionCliente">edit</button> 
                                         </td>
                                         <td>
                                         <button type="button" class="btn btn-danger data-toggle="modal" data-target="#myEdicionCliente"">eliminar</button>

@@ -30,19 +30,26 @@
 							<th>Ingreso</th>
 							<th>Salida</th>
 							<th>Fecha</th>
+<<<<<<< HEAD
 							<th>Estado</th>
+=======
+>>>>>>> c5eee50b67c9364e4fb41290ac0a30b51f05cc93
 							
 						</tr>
 					</thead>
 
 					<tbody>
 						
-						@foreach($productos as $producto)  
+						@foreach($inventarios as $inventario)  
                                 <tr>
-                                <td></td>
-                                <td>{{$producto->nombre_prod}}</td>
-                                <td></td>
-                                 <td>{{$producto->cant_prod}}</td> 
+                                <td>{{$inventario->id_inv}}</td>
+                                <td>{{$inventario->nombre_inv}}</td>
+                                 <td>{{$inventario->accion_inv}}</td>
+                                 <td>{{$inventario->stock_inv}}</td> 
+                                 <td>{{$inventario->ing_inv}}</td>
+                                 <td>{{$inventario->sal_inv}}</td>
+                                 <td>{{$inventario->f_inv}}</td>
+                                 <td></td>
                                 </tr>
 					  @endforeach
 					</tbody>

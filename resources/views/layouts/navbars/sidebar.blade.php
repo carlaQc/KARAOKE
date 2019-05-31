@@ -138,6 +138,11 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Proveedores') }}
                     </a>
                 </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{route('ListOrden.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Listado de ordenes') }}
+                    </a>
+                </li>
 
                     <li class="nav-item">
                     <a class="nav-link " href="#productos" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
@@ -169,6 +174,38 @@
                </ul>
                </div>
                </li> 
+
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#ventas" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="fab fa-laravel" style="color: #f4645f;"></i>
+                        <span class="nav-link-text" style="color: #f4645f;">{{ __('ventas') }}</span>
+                    </a>
+
+                    <div class="collapse " id="ventas">
+                        <ul class="nav nav-sm flex-column">
+                    
+                   <li class="nav-item">
+                    <a class="nav-link" href="{{route('ventass.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('registro de ventas') }}
+                    </a>
+                </li>
+                <!--termina para proveedores-->
+                  <!--esto es para proveedores-->
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('tproducto.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('listas de ventas') }}
+                    </a>
+                </li>
+                <!--termina para proveedores-->
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{route('producto.index')}}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('otras ventas') }}
+                    </a>
+                </li>
+               </ul>
+               </div>
+               </li> 
                
                <li class="nav-item">
                     <a class="nav-link" href="{{route('inventario')}}">
@@ -178,7 +215,7 @@
 
 
                <li class="nav-item">
-                    <a class="nav-link" href="{{route('OrdenMaestro')}}">
+                    <a class="nav-link" href="{{route('OrdenMaestro.index')}}">
                         <i class="ni ni-planet t1ext-blue"></i> {{ __('Orden Maestro') }}
                     </a>
                 </li>
@@ -221,5 +258,7 @@
     </div>
 
 </nav>
+
+
 
 
