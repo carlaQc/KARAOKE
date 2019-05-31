@@ -10,7 +10,8 @@ use App\Productos;
 use App\Proveedores;
 use App\Precios;
 use App\tipo_de_producto;
-
+use Carbon\carbon;
+use App\Inventarios;
 class ProductoController extends Controller
 {
     /**
@@ -45,6 +46,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
     
         'nombre_prod' => 'required',
@@ -55,25 +57,43 @@ class ProductoController extends Controller
         'id_prov' => 'required',
         'id_tprod' => 'required',
         ]);
-        //Clientes::create($request->all());
-        //return back();
-
+       
         $data = $request;
-        $productos = new Productos;
-        $productos->nombre_prod=$data['nombre_prod'];
-        $productos->cant_prod=$data['cant_prod'];
-        $productos->fing_prod=$data['fing_prod'];
-        $productos->fven_prod=$data['fven_prod'];
-        $productos->id_prec=$data['id_prec'];
-        $productos->id_prov=$data['id_prov'];
-        $productos->id_tprod=$data['id_tprod'];
+        $nomProducto = $data['nombre_prod'];
+        $prodInv = DB::table('inventarios')->select('nombre_inv')->where('nombre_inv','=',$nomProducto)->first();
+        if(is_null($prodInv))
+        {
+            // recien realiza el proceso de guardar el producto y posteriormente el inventario
+                $productos = new Productos;
+                $productos->nombre_prod=$data['nombre_prod'];
+                $productos->cant_prod=$data['cant_prod'];
+                $productos->fing_prod=$data['fing_prod'];
+                $productos->fven_prod=$data['fven_prod'];
+                $productos->id_prec=$data['id_prec'];
+                $productos->id_prov=$data['id_prov'];
+                $productos->id_tprod=$data['id_tprod'];
+                $productos -> save();
 
-        if($productos -> save()){
-            return back();
+                //revisar la creacion de la fecha    
+                $fecha = carbon::now();
+
+                $inventario = new inventarios;
+                $inventario->nombre_inv=$data['nombre_prod'];
+                $inventario->accion_inv='r';
+                $inventario->stock_inv=0;
+                $inventario->ing_inv=$data['cant_prod'];
+                $inventario->sal_inv=0;
+                $inventario->f_inv=$fecha;
+                $inventario-> save();
+
+                return back();
         }else{
-            //return "no se ha registrado correctamente el usuario";
-            
-        }
+                return back();               
+       }
+       
+
+        
+        
     }
 
     /**

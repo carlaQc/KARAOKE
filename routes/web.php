@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Auth::routes();
 
@@ -39,6 +39,9 @@ Route::resource('TiposDeAmbiente', 'TiposDeAmbienteController') ;
 Route::get('TiposDeAmbiente', 'TiposDeAmbienteController@index')->name('TiposDeAmbiente') ;
 
 Route::resource('OrdenMaestro', 'OrdenMaestroController');
+Route::resource('Orden', 'OrdenController');
+Route::resource('ListOrden', 'ListController');
+Route::resource('ventass', 'VentasController');
 
 Route::get('inventario', 'InventarioController@index')->name('inventario') ;
 

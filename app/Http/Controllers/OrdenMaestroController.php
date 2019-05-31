@@ -24,19 +24,29 @@ class OrdenMaestroController extends Controller
     
     public function index()
     {
-        $User = DB::table('users')->get();
+
+        /*$prodyprec =DB::table('articles') ->join('categories', 'articles.id', '=', 'categories.id') ->join('users', 'users.id', '=', 'articles.user_id') ->select('articles.id','articles.title','articles.body','users.username', 'category.name') ->get();
+
+        ->where('productos.id_prec','=','precios.id_prec')
+
+        */
+        $pyps = DB::table('productos')->join('precios','productos.id_prec','=','precios.id_prec')->select('productos.nombre_prod','precios.cunitario_prec')->get();
+
+        $cprod = productos::count();
+        $cprod = $cprod + 1;
+        $pprod = $cprod;
+        $nprod = $cprod;
+        //dd($cprod);
+        $cantProd = "cantt";
+        $namProd = "namm";
+        $precProd = "precc";
         $clientes = DB::table('clientes')->get();
-        $precios = DB::table('precios')->get();
-         $proveedores = DB::table('proveedores')->get();
-       
-        $productos = DB::table('productos')->get();
-        $NuevoRegistro =DB::table('nuevos_registros')->get();
+        $nregs =DB::table('nuevos_registros')->get();
        
         //dd($clientes);
        // return view ('cliente.registro',compact('clientes'))
 
-        return view('OrdenMaestro.OrdenMaestro',compact('clientes','proveedores','precios','productos','User','NuevoRegistro'));
-
+        return view('OrdenMaestro.OrdenMaestro',compact('clientes','nregs','pyps','cprod','cantProd','precProd','pprod','namProd','nprod'));
 
         }
 

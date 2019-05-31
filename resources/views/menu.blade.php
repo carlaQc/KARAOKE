@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+{{asset('<!DOCTYPE html>
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
 <html lang="en">
   <head>
     <title>Cafe Karaoke Ecos</title>
@@ -9,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     
@@ -27,6 +32,26 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+=======
+    <link rel="stylesheet" href="{{asset('inicio/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/animate.css')}}">
+    
+    <link rel="stylesheet" href="{{asset('inicio/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('inicio/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('inicio/css/ionicons.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('inicio/css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/jquery.timepicker.css')}}">
+
+    
+    <link rel="stylesheet" href="{{asset('inicio/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/style.css')}}">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -993,6 +1018,7 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
+<<<<<<< HEAD
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -1010,6 +1036,26 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+=======
+  <script src="inicio/js/jquery.min.js"></script>
+  <script src="inicio/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="inicio/js/popper.min.js"></script>
+  <script src="inicio/js/bootstrap.min.js"></script>
+  <script src="inicio/js/jquery.easing.1.3.js"></script>
+  <script src="inicio/js/jquery.waypoints.min.js"></script>
+  <script src="inicio/js/jquery.stellar.min.js"></script>
+  <script src="inicio/js/owl.carousel.min.js"></script>
+  <script src="inicio/js/jquery.magnific-popup.min.js"></script>
+  <script src="inicio/js/aos.js"></script>
+  <script src="inicio/js/jquery.animateNumber.min.js"></script>
+  <script src="inicio/js/bootstrap-datepicker.js"></script>
+  <script src="inicio/js/jquery.timepicker.min.js"></script>
+  <script src="inicio/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="inicio/js/google-map.js"></script>
+  <script src="inicio/js/main.js"></script>
+    
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
     
   </body>
 </html>

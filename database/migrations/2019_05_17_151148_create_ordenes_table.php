@@ -15,15 +15,12 @@ class CreateOrdenesTable extends Migration
     {
         Schema::create('ordenes', function (Blueprint $table) {
             $table->increments('id_orden');
-            $table->integer('id_nuevo')->unsigned();
             $table->String('producto');
             $table->integer('precio');
             $table->integer('cantidad');
-            $table->integer('costo total');
-            $table->integer('costo final');
+            $table->integer('ctotal');
             $table->String('estado',2)->default('a');
-            
-
+            $table->integer('id_nuevo')->unsigned();
             $table->timestamps();
 
              $table->foreign('id_nuevo')->references('id_nuevo')->on('nuevos_registros')->onUpdate('cascade')->onDelete('cascade');
