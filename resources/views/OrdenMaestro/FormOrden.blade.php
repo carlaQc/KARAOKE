@@ -1,18 +1,13 @@
 <div class="box-body">
 				<table class="table table-responsive">
 					<thead>
-						 @foreach($NuevoRegistro as $Nuevo)						
-						
-					
-
+					 <tr>					
 							<th>producto</th>
 							<th>precio</th>
 							<th>cantidad</th>
 							<th>costo total</th>	
-
-						
-						
-		        	@endforeach 
+					</tr>
+		        	
 					</thead>
 					<tbody>
 

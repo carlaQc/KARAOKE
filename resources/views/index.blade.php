@@ -1,4 +1,4 @@
-OCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Cafe Karaoke Ecos</title>
@@ -9,24 +9,24 @@ OCTYPE html>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{asset('inicio/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/animate.css')}}">
     
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('inicio/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/magnific-popup.css')}}">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="{{asset('inicio/css/aos.css')}}">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="{{asset('inicio/css/ionicons.min.css')}}">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="{{asset('inicio/css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/jquery.timepicker.css')}}">
 
     
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('inicio/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('inicio/css/style.css')}}">
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">

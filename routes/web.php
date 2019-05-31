@@ -41,3 +41,13 @@ Route::get('TiposDeAmbiente', 'TiposDeAmbienteController@index')->name('TiposDeA
 Route::resource('OrdenMaestro', 'OrdenMaestroController');
 
 Route::get('inventario', 'InventarioController@index')->name('inventario') ;
+
+
+Route::resource('OrdenMaestro', 'OrdenMaestroController');
+
+
+
+Route::resource('NuevosClientes', 'NuevosClientesController');
+
+
+
