@@ -30,6 +30,10 @@
 							<th>Ingreso</th>
 							<th>Salida</th>
 							<th>Fecha</th>
+<<<<<<< HEAD
+							<th>Estado</th>
+=======
+>>>>>>> c5eee50b67c9364e4fb41290ac0a30b51f05cc93
 							
 						</tr>
 					</thead>
