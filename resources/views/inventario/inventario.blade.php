@@ -31,8 +31,7 @@
 							<th>Salida</th>
 							<th>Fecha</th>
 							<th>Estado</th>
-							<th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Aumentar Stock
-			</button>  </th>
+							
 						</tr>
 					</thead>
 
