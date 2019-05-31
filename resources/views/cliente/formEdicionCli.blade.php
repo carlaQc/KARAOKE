@@ -54,6 +54,7 @@
 		        	<select name="genero_cli" id="genero_cli" size="1" class="form-control">
 		        		<option value="F" selected="">Femenino</option>
 		        		<option value="M" >Masculino</option>
-		        		<option value="O">Otros</option>
+		        		<option value="O">Otros</option>	
 		        	</select>
 	        	</div>
+	

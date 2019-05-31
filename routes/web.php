@@ -44,3 +44,4 @@ Route::resource('ListOrden', 'ListController');
 Route::resource('ventass', 'VentasController');
 
 Route::get('inventario', 'InventarioController@index')->name('inventario') ;
+Route::get('delete/client', 'ClienteController@eliminarCliente')->name('deleteclient') ;

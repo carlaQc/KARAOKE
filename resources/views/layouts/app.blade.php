@@ -29,6 +29,11 @@
         <div class="main-content" >
             @include('layouts.navbars.navbar')
             @yield('content')
+            <section id="vistaform">
+              
+              
+            </section>
+
         </div>
 
         @guest()
@@ -40,6 +45,7 @@
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/sysLaravel.js"></script>
         
        
         @stack('js')

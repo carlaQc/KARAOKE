@@ -42,15 +42,15 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo tipo de evento</h4>
       </div>
-        <form action="{{route('clientes.update','test')}}" method="post">
+        <form action="{{route('clientes.update','test')}}" id="formu_edicion_cliente" method="post">
         {{method_field('PATCH')}}      
         {{csrf_field()}}
           <div class="modal-body">
-          @include('cliente.formRegistroCli')
+          @include('cliente.formEdicionCli')
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" id="" class="btn btn-default form_edicionn" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" class="boton-guardarCliente">Guardar</button>
           </div>
       </form>
     </div>
@@ -77,6 +77,7 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
+                        <div id="alert" class="alert alert-info"></div>
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
@@ -99,10 +100,13 @@
                                     <td>{{$cliente->celular_cli}}</td>
                                     <td>{{$cliente->genero_cli}}</td>
                                     <td>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myEdicionCliente">edit</button> 
+                                    <button type="button" class="btn btn-success" data-mynombre="{{$cliente->nombre_cli}}" data-mygenero="{{$cliente->genero_cli}}" data-toggle="modal" data-target="#myEdicionCliente">edit</button> 
                                         </td>
                                         <td>
-                                        <button type="button" class="btn btn-danger data-toggle="modal" data-target="#myEdicionCliente"">eliminar</button>
+                                        <form action="{{route('deleteclient')}}" method="get">
+                                            <a href="#" class="btn-delete">eliminar</a>
+                                            <input type="number" hidden="true" name="id_cli" id="id_cli" value="{{$cliente->id_cli}}">
+                                        </form>
                                         </td>
                                     </tr>
 
@@ -148,6 +152,7 @@
              modal.find('.modal-body #materno_cli').val(materno_cli);
             modal.find('.modal-body #celular_cli').val(celular_cli);
             modal.find('.modal-body #genero_cli').val(genero_cli);
+
         })
     </script>
 

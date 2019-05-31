@@ -6,7 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use App\Clientes;
 use App\Productos;
+use App\Proveedores;
+use App\Precios;
+use App\OrdenMaestro;
+use App\User;
+use Carbon\carbon;
+use App\Inventarios;
+use App\Ordenes;
 
 
 class VentasController extends Controller
@@ -90,7 +98,51 @@ class VentasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cprod = productos::count();
+
+        while ($cprod >= 1) {
+            $cantt="cantt";
+            $namm="namm";
+            $precc="precc";
+            $kcantt =$cantt.$cprod;
+            $knamm =$namm.$cprod;
+            $kprecc =$precc.$cprod;
+            $cantt = $request->$kcantt;
+            $namm = $request->$knamm;
+            $precc = $request->$kprecc;  
+            if ($cantt == null) {
+                //dd("se esta desvordando por aqui null");
+            }else{
+                $stats = DB::table("inventarios")->select('stock_inv','ing_inv')->where("nombre_inv", "=", $namm)->orderby('created_at','DESC')->get();
+                $eee = $stats[0];
+                $cant_ingresa=$eee->ing_inv;
+                $cant_stock=$eee->stock_inv;
+                $cantInvTot = $cant_ingresa + $cant_stock;
+                $stock_actual=$cantInvTot-$cantt;
+                //dd($cantInvTot);
+                if ($cantInvTot<= $cantt) {
+                    //dd("la cantidad del inventario es baja");
+                }else{
+
+                    $fecha = carbon::now();
+
+                    $data = $request;
+                    $orden = new Inventarios;
+                    $orden->nombre_inv=$namm;
+                    $orden->accion_inv='v';
+                    $orden->stock_inv=$stock_actual;
+                    $orden->ing_inv=0;
+                    $orden->sal_inv=$cantt;
+                    $orden->f_inv=$fecha;
+                    $orden->estado_inv='a';
+
+                    $orden -> save();
+                    
+                }
+            }
+            $cprod=$cprod-1;
+        }
+        return back();
     }
 
     /**
