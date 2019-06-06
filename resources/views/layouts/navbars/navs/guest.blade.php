@@ -28,13 +28,18 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route('home') }}">
                         <i class="ni ni-planet"></i>
-                        <span class="nav-link-inner--text">{{ __('Dashboard') }}</span>
+                        <span class="nav-link-inner--text">{{ __('inicio') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="{{ route('register') }}">
+                    <a class="nav-link nav-link-icon" data-target="#myRegistroCliente" >
                         <i class="ni ni-circle-08"></i>
-                        <span class="nav-link-inner--text">{{ __('Register') }}</span>
+                        <span class="nav-link-inner--text"  data-toggle="modal" data-target="#myRegistroCliente"  >
+                        {{ __('Registro') }}
+                    
+                    </span>
+                    
+
                     </a>
                 </li>
                 <li class="nav-item">
@@ -53,3 +58,25 @@
         </div>
     </div>
 </nav>
+
+
+<div class="modal fade" id="myRegistroCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog "  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nuevo</h4>
+      </div>
+        <form action="{{route('clientes.store')}}" method="post">    
+        {{csrf_field()}}
+          <div class="modal-body">
+          @include('cliente.formRegistroCli')
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

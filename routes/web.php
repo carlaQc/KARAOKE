@@ -44,3 +44,13 @@ Route::resource('ListOrden', 'ListController');
 Route::resource('ventass', 'VentasController');
 
 Route::get('inventario', 'InventarioController@index')->name('inventario') ;
+
+
+Route::resource('OrdenMaestro', 'OrdenMaestroController');
+
+
+
+Route::resource('NuevosClientes', 'NuevosClientesController');
+
+
+

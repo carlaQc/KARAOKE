@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+OCTYPE html>
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
 <html lang="en">
   <head>
     <title>Cafe Karaoke Ecos</title>
@@ -35,6 +39,27 @@
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="oi oi-menu"></span> Menu
 		      </button>
+<<<<<<< HEAD
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
+	          <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+	          <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">Acerca de</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+
+            <li class="nav-item"><a href="contact.html" class="nav-link">Register</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Login</a></li>
+	        </ul>
+	      </div>
+		  </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="home-slider owl-carousel img" style="background-image: url(images/bg_3.jpg);">
+      <div class="slider-item">
+=======
 
 <!--nav-->
 	      <div class="collapse navbar-collapse" id="ftco-nav">
@@ -81,6 +106,7 @@
 
     <section class="home-slider owl-carousel img" style="background-image: url(inicio/images/bg_1.jpg);">
       <div class="slider-item" >
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
         <div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -96,7 +122,11 @@
         </div>
       </div>
 
+<<<<<<< HEAD
+      <div class="slider-item">
+=======
       <div class="slider-item" >
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-center" data-scrollax-parent="true">
@@ -108,14 +138,22 @@
               <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
             <div class="col-md-6 ftco-animate">
+<<<<<<< HEAD
+            	<img src="images/bg_0.jpg" class="img-fluid" alt="">
+=======
             	<img src="inicio/images/bg_0.jpg" class="img-fluid" alt="">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
             </div>
 
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
+      <div class="slider-item">
+=======
       <div class="slider-item" >
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-center" data-scrollax-parent="true">
@@ -127,7 +165,11 @@
               <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
             <div class="col-md-6 ftco-animate">
+<<<<<<< HEAD
+            	<img src="images/nuevo1.jpg" class="img-fluid" alt="">
+=======
             	<img src="inicio/images/nuevo1.jpg" class="img-fluid" alt="">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
             </div>
 
           </div>
@@ -177,7 +219,11 @@
     </section>
 
     <section class="ftco-about d-md-flex">
+<<<<<<< HEAD
+    	<div class="one-half img" style="background-image: url(images/about.jpg);"></div>
+=======
     	<div class="one-half img" style="background-image: url(inicio/images/about.jpg);"></div>
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
     	<div class="one-half ftco-animate">
         <div class="heading-section ftco-animate ">
           <h2 class="mb-4">¿QUIENES SOMOS?</h2>
@@ -207,28 +253,44 @@
     		<div class="row no-gutters">
 
 					<div class="col-md-3 ftco-animate">
+<<<<<<< HEAD
+					<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
+=======
 					<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(inicio/images/gallery-1.jpg);">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
+<<<<<<< HEAD
+						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
+=======
 						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(inicio/images/gallery-2.jpg);">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
+<<<<<<< HEAD
+						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
+=======
 						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(inicio/images/gallery-3.jpg);">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
+<<<<<<< HEAD
+						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
+=======
 						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(inicio/images/gallery-4.jpg);">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
@@ -251,7 +313,11 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
+<<<<<<< HEAD
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+=======
               <a href="blog-single.html" class="block-20" style="background-image: url('inicio/images/image_1.jpg');">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
@@ -266,7 +332,11 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
+<<<<<<< HEAD
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+=======
               <a href="blog-single.html" class="block-20" style="background-image: url('inicio/images/image_2.jpg');">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
@@ -281,7 +351,11 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
+<<<<<<< HEAD
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+=======
               <a href="blog-single.html" class="block-20" style="background-image: url('inicio/images/image_3.jpg');">
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
@@ -351,7 +425,11 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Recientes del Blog</h2>
               <div class="block-21 mb-4 d-flex">
+<<<<<<< HEAD
+                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+=======
                 <a class="blog-img mr-4" style="background-image: url(inicio/images/image_1.jpg);"></a>
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
                 <div class="text">
                   <h3 class="heading"><a href="#">"Delicioso" Desayuno Yungueño </a></h3>
                   <div class="meta">
@@ -362,7 +440,11 @@
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
+<<<<<<< HEAD
+                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+=======
                 <a class="blog-img mr-4" style="background-image: url(inicio/images/image_2.jpg);"></a>
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
                 <div class="text">
                   <h3 class="heading"><a href="#">Mas de 10.000 musicas en nuestro reperto</a></h3>
                   <div class="meta">
@@ -415,6 +497,25 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
+<<<<<<< HEAD
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+=======
   <script src="inicio/js/jquery.min.js"></script>
   <script src="inicio/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="inicio/js/popper.min.js"></script>
@@ -432,6 +533,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="inicio/js/google-map.js"></script>
   <script src="inicio/js/main.js"></script>
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
     
   </body>
 </html>

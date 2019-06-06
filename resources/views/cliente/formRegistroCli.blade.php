@@ -1,8 +1,4 @@
-		<div class="form-group">
-		        	<label for="title">nombre del empleado</label>
-		        	<h3>{{ auth()->user()->name }}</h3>
-	        	</div>
-	        	<input type="hidden" name="id_cli" id="id_cli" value="">
+		    	<input type="hidden" name="id_cli" id="id_cli" value="">
 	    <div class="form-group">
 		        	<input type="text" class="form-control" name="nombre_cli" id="nombre_cli" placeholder="nombre del cliente" value="{{ old('nombre_cli') }}">
 

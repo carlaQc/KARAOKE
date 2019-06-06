@@ -1,9 +1,19 @@
 <div class="box-body">
 				<table class="table table-responsive">
 					<thead>
+<<<<<<< HEAD
+					 <tr>					
+							<th>producto</th>
+							<th>precio</th>
+							<th>cantidad</th>
+							<th>costo total</th>	
+					</tr>
+		        	
+=======
 							<th>producto</th>
 							<th>precio (bs)</th>
 							<th>unidades</th>	
+>>>>>>> 5b952c6847cca5672f48273000bae3ef647f237e
 					</thead>
 					<tbody>
 						<input type="hidden" name="id_nuevo" id="id_nuevo" value="">
