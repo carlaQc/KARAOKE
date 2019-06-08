@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
                 ->references('id')->on('roles')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->string('estado_use',2)->default('a');
 
         });
     }

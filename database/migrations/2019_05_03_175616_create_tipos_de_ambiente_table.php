@@ -19,6 +19,7 @@ class CreateTiposDeAmbienteTable extends Migration
             $table->string('capacidad');
             $table->integer('costo');
             $table->boolean('disponible')->default(1);
+            $table->string('estado_tip_amb',2)->default('a');
             $table->timestamps();
         });
     }

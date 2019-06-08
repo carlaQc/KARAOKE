@@ -16,7 +16,7 @@ class CreatePreciosTable extends Migration
         Schema::create('precios', function (Blueprint $table) {
             $table->increments('id_prec');
             $table->integer('cpaquete_prec');
-            $table->integer('cunitario_prec');
+            $table->float('cunitario_prec');
             $table->string('estado_prec',2)->default('a');
             $table->timestamps();
         });

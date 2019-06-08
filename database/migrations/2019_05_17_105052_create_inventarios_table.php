@@ -21,7 +21,7 @@ class CreateInventariosTable extends Migration
             $table->integer('ing_inv');
             $table->integer('sal_inv');
             $table->datetime('f_inv');
-            $table->string('estado_inv')->default('a');
+            $table->string('estado_inv',2)->default('a');
             $table->timestamps();
         });
     }

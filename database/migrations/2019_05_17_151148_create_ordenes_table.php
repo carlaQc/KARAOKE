@@ -16,7 +16,7 @@ class CreateOrdenesTable extends Migration
         Schema::create('ordenes', function (Blueprint $table) {
             $table->increments('id_orden');
             $table->String('producto');
-            $table->integer('precio');
+            $table->float('precio');
             $table->integer('cantidad');
             $table->integer('ctotal');
             $table->String('estado',2)->default('a');
