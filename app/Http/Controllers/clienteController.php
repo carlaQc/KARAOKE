@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +15,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = DB::table('clientes')->get();
+        $clientes = DB::table('clientes')->where('estado_cli','=','a')->get();
         //dd($clientes);
         return view ('cliente.registro',compact('clientes'));
     }
@@ -124,6 +122,21 @@ class ClienteController extends Controller
         //dd($id);
         //dd($request->all());
         return back();
+    }
+
+
+        public function eliminarCliente(Request $request)
+    {
+        if ($request->ajax()){
+            $cliente =Clientes::findOrFail($request->id_cli);
+            $cliente->update([
+                'estado_cli' =>'b',
+            ]);
+
+            return response()->json([
+                'mensaje'=> $cliente->nombre_cli.' fue eliminado correctamente',
+            ]);
+        }
     }
 
     /**

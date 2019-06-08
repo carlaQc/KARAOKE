@@ -1,34 +1,57 @@
-
-$(document).on("submit",".formarchivo",function(e){
-		e.preventDefault();
-		var formu =$(this);
-		var nombreform =$(this).attr("id");
-
-		if(nombreform == "f_subir_imagen"){var miurl = "subir_imagen_usuario"; var divresult = "notificacion_result_fci"}
-		//iformacion del formulario
-		var formData = new formData($("#"+nombreform+"")[0]);
-		//realizamos la peticion a ajax
-		$.ajax({
-				url:miurl,
-				type:'POST',
-				//datos del formulario
-				data:formData,
-				//se requiere subir archivos mediante ajax
-				cache:false,
-				contentType:false,
-				processData:false,
-				//mientras enviamos el archivo
-				beforeSend: function(){
-					$("#"+divresult+"").html($("#cargador_empresa").html());
-				},
-				//una venz finalizado correctamente
-				success: function(data){
-					$("#"+divresult+"").html(data);
-					$("#fotografia_usuario").attr('src', $("#fotografia_usuario").attr('src') + '?' + Math.random() );
-				},
-				//si a ocurrido un error
-				error: function(data){
-					alert("ha ocurrido un error");
-				}
+$(document).ready(function(){
+	$('#alert').hide();
+		$('.btn-delete').click(function(e){//cuando realizamos un click, no actualiza la vista, la captura
+			e.preventDefault();
+			if ( ! confirm("¿Esta seguro de eliminar?")) {
+				return false;
+			}
+			var row = $(this).parents('tr');
+			var form = $(this).parents('form');
+			var url = form.attr('action');
+			$('#alert').show();
+			$.get(url, form.serialize(), function(result){
+				row.fadeOut();
+				$('#alert').html(result.mensaje);
+			}).fail(function(){
+				$('#alert').html('algo salio mal');
+			});
 		});
 });
+
+$(document).ready(function(){
+	$('#alert').hide();
+		$('.boton-guardarCliente').click(function(e){//cuando realizamos un click, no actualiza la vista, la captura
+			e.preventDefault();
+			if ( ! confirm("¿Esta seguro de eliminar?")) {
+				return false;
+			}
+			var row = $(this).parents('tr');
+			var form = $(this).parents('form');
+			var url = form.attr('action');
+			$('#alert').show();
+			$.get(url, form.serialize(), function(result){
+				row.fadeOut();
+				$('#alert').html(result.mensaje);
+			}).fail(function(){
+				$('#alert').html('algo salio mal');
+			});
+		});
+});
+
+/*
+$(document).on("submit",".form_edicionn",function(e){
+	var formu=$(this);
+	var quien=$(this).attr("id");
+
+	console.log(quien);
+
+	var form = $(this).parents('form');
+		$.get(url, form.serialize(), function(result){
+				row.fadeOut();
+				$('#alert').html(result.mensaje);
+			})
+
+
+
+});
+*/

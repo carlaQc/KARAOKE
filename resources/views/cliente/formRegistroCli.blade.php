@@ -1,4 +1,8 @@
-		    	<input type="hidden" name="id_cli" id="id_cli" value="">
+		<div class="form-group">
+		        	<label for="title">nombre del empleado</label>
+		        	<h3>{{ auth()->user()->name }}</h3>
+	        	</div>
+	        	<input type="hidden" name="id_cli" id="id_cli" value="">
 	    <div class="form-group">
 		        	<input type="text" class="form-control" name="nombre_cli" id="nombre_cli" placeholder="nombre del cliente" value="{{ old('nombre_cli') }}">
 
@@ -47,31 +51,9 @@
 	        	</div>
 	    <div class="form-group">
 		        	<label for="title">Genero</label>
-		        	<select name="genero_cli" size="1" class="form-control">
-		        		@if (old('genero_cli') == "F")
+		        	<select name="genero_cli" id="genero_cli" size="1" class="form-control">
 		        		<option value="F" selected="">Femenino</option>
 		        		<option value="M" >Masculino</option>
 		        		<option value="O">Otros</option>
-		        		@else
-		        			@if (old('genero_cli') == "M")
-		        			<option value="F" >Femenino</option>
-		        			<option value="M" selected="">Masculino</option>
-		        			<option value="O">Otros</option>
-		        			@else
-		        				@if (old('genero_cli') == "O")
-		        				<option value="F" >Femenino</option>
-		        				<option value="M" >Masculino</option>
-		        				<option value="O" selected="">Otros</option>
-		        				@else
-		        				<option value="F" >Femenino</option>
-		        				<option value="M" >Masculino</option>
-		        				<option value="O" selected="">Otros</option>
-
-		        				@endif
-
-		        			@endif
-		        	
-		        		@endif
-		        			
 		        	</select>
 	        	</div>

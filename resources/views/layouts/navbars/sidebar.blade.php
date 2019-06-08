@@ -20,7 +20,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                     <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
+
+                        <h6 class="text-overflow m-0">{{ __('ozo') }}</h6>
                     </div>
                     <a href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
@@ -79,7 +80,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav"  >
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('home') }}">
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Tablero') }}
                     </a>
                 </li>
@@ -104,17 +105,12 @@
                         </ul>
                     </div>
                 </li>
-<!--
-                @if(auth()->user()->role_id == 3)
-                    <label> esto ve el cliente</label>
-                @else
-                    <label>esto no lo ve el cliente</label>
-                @endif
--->
+
+
                 <!--creacion de el link que va a creacion de cliente-->
 
                 <li class="nav-item">
-                    <a class="nav-link"  href="#clientes" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                    <a class="nav-link " href="#clientes" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Clientes') }}</span>
                     </a>

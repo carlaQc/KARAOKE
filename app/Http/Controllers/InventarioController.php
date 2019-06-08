@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use App\Productos;
 
+
 class InventarioController extends Controller
 {
     /**

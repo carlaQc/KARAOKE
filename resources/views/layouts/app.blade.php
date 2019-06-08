@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>KARAOKE ECOS</title>
+        <title>{{ config('app.name', 'Argon Dashboard') }}</title>
         <!-- Favicon -->
         <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
         <!-- Fonts -->
@@ -29,6 +29,11 @@
         <div class="main-content" >
             @include('layouts.navbars.navbar')
             @yield('content')
+            <section id="vistaform">
+              
+              
+            </section>
+
         </div>
 
         @guest()
@@ -40,6 +45,7 @@
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/sysLaravel.js"></script>
         
        
         @stack('js')

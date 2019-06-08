@@ -13,6 +13,32 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#hacerVenta">NUEVA VENTA
             </button>
 
+            <form action="{{route('seleccionProducto')}}" method="post">
+                {{csrf_field()}}        
+                <div class="form-group">
+                    <label for="title">PRODUCTO</label>
+                    <select name="nproducto" id="nproducto" size="1" class="form-control">
+                        @if($listProds->count())  
+                                @foreach($listProds as $listProd)
+                        <option value="{{$listProd->nombre_prod}}" selected="">{{$listProd->nombre_prod}}</option>
+                                @endforeach
+                        @else
+                            <label>no hay registros</label>
+                        @endif
+                    </select>
+                    <label for="title">ACCION</label>
+                    <select name="accion" id="accion" size="1" class="form-control">
+                        <option value="r" selected="">registros</option>
+                        <option value="v" selected="">ventas</option>
+                    </select>
+                        <label>FECHA INICIO</label>
+                        <input id="fecha_inicio" name="fecha_inicio" type="date" class="form-control">
+                        <label>FECHA DE FINAL</label>
+                        <input id="fecha_final" name="fecha_final" type="date" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">VERIFICAR VENTAS</button>
+            </form>
+
             <!--modal inicio-->                  
 <div class="modal fade" id="myRegistroTprod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-danger"  role="document">
@@ -96,8 +122,9 @@
                                     <td>{{$venta->ing_inv}}</td>
                                     <td>{{$venta->sal_inv}}</td>
                                     <td>{{$venta->f_inv}}</td>
+                                    <input value="{{$in=$venta->ing_inv+$in}}" type="hidden">
+                                    <input value="{{$en=$venta->sal_inv+$en}}" type="hidden">
                                     <td>
-                                        
                                     </tr>
 
                                     @endforeach 
@@ -106,7 +133,27 @@
                                         <td colspan="8">No hay registro !!</td>
                                     </tr>
                                     @endif
-
+                            </tbody>
+                        </table>
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                <th>producto</th>
+                                <th>stock restante</th>
+                                <th>ingresos totales</th>
+                                <th>salidas totales</th>
+                                <th>fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{$venta->nombre_inv}}</td>
+                                    <td>{{$venta->stock_inv}}</td>
+                                    <td>{{$in}}</td>
+                                    <td>{{$en}}</td>
+                                    <td>{{$venta->f_inv}}</td>
+                                    <td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
