@@ -20,7 +20,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                     <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
+
+                        <h6 class="text-overflow m-0">{{ __('ozo') }}</h6>
                     </div>
                     <a href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>

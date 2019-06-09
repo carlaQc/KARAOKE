@@ -17,7 +17,7 @@ $(document).ready(function(){
 			});
 		});
 });
-/*
+
 $(document).ready(function(){
 	$('#alert').hide();
 		$('.boton-guardarCliente').click(function(e){//cuando realizamos un click, no actualiza la vista, la captura
@@ -37,7 +37,7 @@ $(document).ready(function(){
 			});
 		});
 });
-*/
+
 /*
 $(document).on("submit",".form_edicionn",function(e){
 	var formu=$(this);

@@ -25,10 +25,13 @@ class VentasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
+    {   
+            $fecha = carbon::now()->format('Y-m-d');
+            //$fecha = carbon::parse($fecha);
+            //dd($fecha);
+    
           $pyps = DB::table('productos')->join('precios','productos.id_prec','=','precios.id_prec')->select('productos.nombre_prod','precios.cunitario_prec')->get();
-
+        $listProds = DB::table('Productos')->select('nombre_prod','id_prod')->where('estado_prod','=','a')->get();
         $cprod = productos::count();
         $cprod = $cprod + 1;
         $pprod = $cprod;
@@ -41,8 +44,70 @@ class VentasController extends Controller
         $nregs =DB::table('nuevos_registros')->get();
        
         $v="v";
-         $ventas = DB::table('inventarios')->where('accion_inv','=',$v)->get();
-        return view('ventas.registroVentas',compact('ventas','clientes','nregs','pyps','cprod','cantProd','precProd','pprod','namProd','nprod'));
+         $ventas = DB::table('inventarios')
+         ->where('accion_inv','=',$v)
+         ->whereDate('f_inv','=',$fecha)
+         ->get();
+         $st=0;
+         $in=0;
+         $en=0;
+        return view('ventas.registroVentas',compact('st','in','en','ventas','clientes','nregs','pyps','cprod','cantProd','precProd','pprod','namProd','nprod','listProds'));
+    
+    }
+    public function filtroDeProducto(Request $request){
+        /*
+        $suma = DB::table('inventarios')
+        ->where('nombre_inv','=','golosinas')
+        ->select(DB::raw('SUM(sal_inv) as salidas'))
+        ->get();
+
+        dd($suma);
+*/
+        $fecha = carbon::now()->format('Y-m-d');
+
+        $idProdAbuscar = $request->nproducto;
+        $fecha_inicio=$request->fecha_inicio;
+        $fecha_final=$request->fecha_final;
+        if((is_null($fecha_inicio))&&(is_null($fecha_final))){
+            
+                    $ventas = DB::table('inventarios')
+                    ->where('nombre_inv','=',$idProdAbuscar)
+                    ->where('accion_inv','=','v')
+                    ->whereDate('f_inv','=',$fecha)
+                    ->get();            
+        }else{  
+                    $fecha_inicio = carbon::parse($request->fecha_inicio);
+                    $fecha_final = carbon::parse($request->fecha_final);
+                    $ventas = DB::table('inventarios')
+                    ->where('nombre_inv','=',$idProdAbuscar)
+                    ->where('accion_inv','=','v')
+                    ->whereBetween('f_inv',[$fecha_inicio,$fecha_final])
+                    ->get();
+        }
+
+
+        $pyps = DB::table('productos')
+        ->join('precios','productos.id_prec','=','precios.id_prec')
+        ->select('productos.nombre_prod','precios.cunitario_prec')
+        ->get();
+        $listProds = DB::table('Productos')->select('nombre_prod','id_prod')->where('estado_prod','=','a')->get();
+        $cprod = productos::count();
+        $cprod = $cprod + 1;
+        $pprod = $cprod;
+        $nprod = $cprod;
+        //dd($cprod);
+        $cantProd = "cantt";
+        $namProd = "namm";
+        $precProd = "precc";
+        $clientes = DB::table('clientes')->get();
+        $nregs =DB::table('nuevos_registros')->get();
+       
+        $v="v";
+        $st=0;
+        $in=0;
+        $en=0;
+         //$ventas = DB::table('inventarios')->where('accion_inv','=',$v)->get();
+        return view('ventas.registroVentas',compact('st','in','en','sumador','ventas','clientes','nregs','pyps','cprod','cantProd','precProd','pprod','namProd','nprod','listProds'));
 
     }
 
@@ -142,7 +207,34 @@ class VentasController extends Controller
             }
             $cprod=$cprod-1;
         }
-        return back();
+
+
+
+
+
+        $fecha = carbon::now()->format('Y-m-d');
+            //$fecha = carbon::parse($fecha);
+            //dd($fecha);
+    
+        $pyps = DB::table('productos')->join('precios','productos.id_prec','=','precios.id_prec')->select('productos.nombre_prod','precios.cunitario_prec')->get();
+        $listProds = DB::table('Productos')->select('nombre_prod','id_prod')->where('estado_prod','=','a')->get();
+        $cprod = productos::count();
+        $cprod = $cprod + 1;
+        $pprod = $cprod;
+        $nprod = $cprod;
+        //dd($cprod);
+        $cantProd = "cantt";
+        $namProd = "namm";
+        $precProd = "precc";
+        $clientes = DB::table('clientes')->get();
+        $nregs =DB::table('nuevos_registros')->get();
+       
+        $v="v";
+         $ventas = DB::table('inventarios')
+         ->where('accion_inv','=',$v)
+         ->whereDate('f_inv','=',$fecha)
+         ->get();
+        return view('ventas.registroVentas',compact('ventas','clientes','nregs','pyps','cprod','cantProd','precProd','pprod','namProd','nprod','listProds'));
     }
 
     /**
