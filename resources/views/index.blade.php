@@ -44,15 +44,15 @@
 	          <li class="nav-item active"> 
                     <a href="index.html" class="nav-link">Inicio</a></li>
 	          <li class="nav-item">  
-                    <a href="menu" class="nav-link">Menu</a></li>
+                    <a href="http://localhost/karaoke/public/inicio/menu.html" class="nav-link">Menu</a></li>
 	          <li class="nav-item">
-                    <a href="services.html" class="nav-link">Servicios</a></li>
+                    <a href="http://localhost/karaoke/public/inicio/services.html" class="nav-link">Servicios</a></li>
 	          <li class="nav-item">
-                    <a href="blog.html" class="nav-link">Blog</a></li>
+                    <a href="http://localhost/karaoke/public/inicio/blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item">
-                    <a href="about.html" class="nav-link">Sobre Nosotros</a></li>
+                    <a href="http://localhost/karaoke/public/inicio/about.html" class="nav-link">Sobre Nosotros</a></li>
 	          <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contacto</a></li>
+                    <a href="http://localhost/karaoke/public/inicio/contact.html" class="nav-link">Contacto</a></li>
             <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route('register') }}">
                         <i class="ni ni-circle-08"></i>
